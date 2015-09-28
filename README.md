@@ -8,8 +8,11 @@ This script contains support for encrypting backups with AES-cbc 256 bit. In ord
 # Execution
 To execute the script, type `bash backupScript.bash`
 # Common Issues
-Help! I'm getting errors like this when executing the script:<br/>
+<b>Help! I'm getting errors like this when executing the script:</b><br/>
 `...$'\r': command not found...`<br/>
-This error is caused by improper new line formatting. This can be fixed by installing the dos2unix and running it on the script, like so: `dos2unix backupScript.bash`
+This error is caused by improper new line formatting. This can be fixed by installing the dos2unix and running it on the script, like so: `dos2unix backupScript.bash`<br/>
+<b>How do I decrypt backups?</b><br/>
+Run this command:<br/>
+`openssl enc -d -aes-256-cbc -in <encrypted backup> -out backup.tar.gz -pass file:<AES password file>`
 # I want to contribute!
 That's great! Just make a pull request, and I'll review it soon.
